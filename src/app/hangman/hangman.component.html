@@ -1,0 +1,26 @@
+<div class = "main">
+    <div class="blank" style = "text-align: center">
+        <span class = "abcd" *ngIf="con1; then thenBlock else elseBlock"></span>
+        <ng-template #thenBlock>{{a1}}</ng-template>
+        <ng-template #elseBlock>&#95;</ng-template>
+        <span class = "efgh" *ngIf="con2; then thenBlock else elseBlock"></span>
+        <ng-template #thenBlock>{{a2}}</ng-template>
+        <ng-template #elseBlock>&#95;</ng-template>
+        <span class = "ijkl" *ngIf="con3; then thenBlock else elseBlock"></span>
+        <ng-template #thenBlock>{{a3}}</ng-template>
+        <ng-template #elseBlock>&#95;</ng-template>
+    </div>
+    <div class = "foot">
+        <span class = "spin" style = "justify-content: center" *ngFor="let char of arr ">
+            <button type="button" class="btn btn-primary" (click) = "onclick(char)" ng-disabled="disable">{{char}}</button>
+        </span>
+    </div>
+    <h4>{{gm}}</h4>
+    <span>No. of moves : {{count+i}}</span>
+    <h4 *ngIf="win">
+        You Won The Game
+    </h4>
+    <h4 *ngIf="lose">
+        Better Luck Next Time
+    </h4>
+</div>
